@@ -395,10 +395,54 @@ But this is our chosen project design, not a universal rule. A company could cho
 The key is:
 
 _delta_log belongs to a Delta dataset, not simply to "Databricks."
+-----------------------------------------------------------Step1----------------------------------------
+STEP 1 — Create the Landing area
+
+Since you already created:
+
+databricks1storage
+
+we'll use that storage.
+
+Create a container, for example:
+
+ecommerce
+
+Then create:
+
+ecommerce/
+└── landing/
+
+Upload:
+
+ecommerce_sales.csv
+
+So physically we have:
+
+databricks1storage
+       │
+       └── ecommerce
+              │
+              └── landing
+                    │
+                    └── ecommerce_sales.csv
+Important
+
+At this point:
+
+CSV
+
+means:
+
+❌ Not Delta
+❌ No _delta_log
+❌ Not a Bronze table
+
+It is simply a raw source file.
 
 So Databricks reading a CSV ≠ _delta_log.
 Databricks writing Delta = _delta_log.
-
+-------------------------------------------------------------------------------------------------
 ******Ingestion: Copy the data from source to landing zone/Raw zone. Note we do not create any _delta_log *********
         
 
