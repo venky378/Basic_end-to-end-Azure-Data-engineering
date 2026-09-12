@@ -400,5 +400,5 @@ So Databricks reading a CSV ≠ _delta_log.
 Databricks writing Delta = _delta_log.
 
 ******Ingestion: Copy the data from source to landing zone/Raw zone. Note we do not create any _delta_log *********
-
+        
 
